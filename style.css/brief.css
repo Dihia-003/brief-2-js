@@ -4,8 +4,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-image: url(../brief-2-js/nature.jpeg);
+    background-color: rgb(255, 240, 221);
     background-size: cover;
+
 }
 
 #carrousel {
