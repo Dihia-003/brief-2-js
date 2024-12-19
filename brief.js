@@ -13,16 +13,17 @@ document.body.onload = function () {
     }
 }
 g.onclick = function () {
-    if (p > -nb + 1) {
-        p--;
+
+    if (p < 0) {
+        p++;
     }
 
     container.style.transform = "translate(" + p * 800 + "px)";
     container.style.transition = "all 0.5s ease";
 }
 d.onclick = function () {
-    if (p < 0) {
-        p++;
+    if (p > -nb + 1) {
+        p--;
     }
     container.style.transform = "translate(" + p * 800 + "px)";
     container.style.transition = "all 0.5s ease";
