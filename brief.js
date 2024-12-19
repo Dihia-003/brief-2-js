@@ -13,11 +13,8 @@ document.body.onload = function () {
     }
 }
 g.onclick = function () {
-
-    if (p < 0) {
+    if (p < 0)
         p++;
-    }
-
     container.style.transform = "translate(" + p * 800 + "px)";
     container.style.transition = "all 0.5s ease";
 }
