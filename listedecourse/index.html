@@ -1,30 +1,23 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-
-    <title>Liste de courses </title>
+    <title>Liste de Courses</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Ma liste de courses</h1>
     <div class="container">
-        <div class="champs">
-            <input type="text" id="taskinput" placeholder="Ajouter une tâche">
-
-            <button onclick="addtask()"> <ion-icon name="add-circle-outline"> </ion-icon> </button>
+        <h1>Liste de Courses</h1>
+        <div class="input-container">
+            <input type="text" id="itemInput" placeholder="Ajouter un article...">
+            <button id="addButton">Ajouter</button>
         </div>
-        <ul id="taskList">
-        </ul>
+        <ul id="shoppingList" class="shopping-list"></ul>
     </div>
-
-
     <script src="test.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
