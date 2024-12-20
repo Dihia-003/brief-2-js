@@ -1,44 +1,49 @@
-let taskList = document.getElementById('taskList');
-function addtask() {
-    let taskInput = document.getElementById('taskInput');
-    let taskText = taskInput.value
+// Sélection des éléments du DOM
+const itemInput = document.getElementById('itemInput');
+const addButton = document.getElementById('addButton');
+const shoppingList = document.getElementById('shoppingList');
 
-    if (taskText === "") {
-        return;
-    }
+// Ajouter un article
+addButton.addEventListener('click', () => {
+    const itemText = itemInput.value.trim();
+    if (itemText === '') return;
 
-    let li = document.createElement('li')
-    li.innerHTML = taskText;
+    const listItem = createListItem(itemText);
+    shoppingList.appendChild(listItem);
 
-    let editButton = document.createElement('button');
-    editButton.innerHTML = '<ion-icon name="pencil-outline"></ion-icon>'
+    itemInput.value = '';
+});
 
-    editButton.onclick = function () {
-        editTask(li);
-    }
+// Créer un élément de liste
+function createListItem(text) {
+    const li = document.createElement('li');
+    li.textContent = text;
 
-    letdeleteButton = document.createElement("button");
-    deleteButton.innerHTML = '<ion-icon name="trash-outline"></ion-icon>'
+    const actions = document.createElement('div');
+    actions.classList.add('actions');
 
-    deleteButton.onclick = function () {
-        deleteTask(li);
-    }
+    // Bouton Modifier
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Modifier';
+    editButton.classList.add('edit');
+    editButton.addEventListener('click', () => {
+        const newText = prompt('Modifier l’article:', text);
+        if (newText !== null && newText.trim() !== '') {
+            li.firstChild.textContent = newText.trim();
+        }
+    });
 
-    li.appendChild(editButton);
-    li.appendChild(deleteButton);
+    // Bouton Supprimer
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Supprimer';
+    deleteButton.classList.add('delete');
+    deleteButton.addEventListener('click', () => {
+        shoppingList.removeChild(li);
+    });
 
-    taskList.appendChild(li);
-    taskInput.value = "";
+    actions.appendChild(editButton);
+    actions.appendChild(deleteButton);
+    li.appendChild(actions);
 
-}
-
-function editTask(task) {
-    let taskTextElement = task.firstChild;
-    let taskText = taskTextElement.textContent;
-
-    let newTaskText = prompt(`Modifier la tâche:`, taskText)
-    if (newTaskText === null || newTaskText === "") {
-        return;
-    }
-    taskTextElement.textContent = newTaskText;
+    return li;
 }
