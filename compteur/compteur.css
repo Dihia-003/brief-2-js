@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.scorekeeper {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.player {
+    text-align: center;
+}
+
+.score {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #0078d7;
+}
+
+.btn {
+    display: block;
+    margin: 5px 0;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+.reset-all {
+    margin-top: 20px;
+    background: #ff4d4d;
+    color: #fff;
+}
+
+.reset-all:hover {
+    background: #e63939;
+}
